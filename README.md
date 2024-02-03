@@ -1,4 +1,4 @@
-# Welcome to (Progress | X) Reports with the OpenAI API!
+# Welcome to :paperclip: (Progress | X) Reports :paperclip: with the OpenAI API!
 
 Where X is any type of report you need to make, progress reports being just my particular use case right now! See examples below, validating this LLM use case. One repetitive writing task offshored to LLM land, the perfect use case for this tech at this moment :rabbit2:
 
