@@ -12,7 +12,7 @@ I have a collection of daily reports in a folder somewhere, let's say they all f
 
 I want to run a program that takes care of the content accurately but flexibly and in the style I like, even perform some simple summation (this type of math an LLM can currently certainly already do) of hours worked (included in the daily report), thus automating away the monthly task and also doing the simple by-handy tallying of (billable, typically) hours worked.
 
-Daily report example:
+Daily report example (redacted):
 
 >Daily Report with Time (Jack Heseltine) - Date: February 1st
 >
@@ -23,7 +23,7 @@ Daily report example:
 >
 >Open Question/Idea for Weekly Recap
 >
->"Needs Production Testing" field in jira tickets: general rule here?
+>+ "Needs Production Testing" field in jira tickets: general rule here?
 >
 >+ COLLEAGUE A had an idea to do a Special Subclass Implementation (clean) version of the bug fix outlined in JIRA-TICKET-NUMBER which I like a lot.
 >
@@ -40,9 +40,50 @@ So imagine 20 or so of these at the end of a month and now you need to submit yo
 
 The output per month should be:
 
-> TODO
+> Subject: Progress Report for Jack Heseltine - January 2024
+>
+>Executive Summary:
+>
+>January marked the initiation of Jack Heseltine's role as a Software Engineer Consultant at Wolfram Research. The month was primarily dedicated to onboarding and technical setup, followed by a deep dive into the Cloud Team's operations. Significant progress was made in familiarizing with the company's systems and tools, particularly Mathematica and the Cloud platform. Efforts were focused on completing the Newhire Checklist, resolving technical setup issues, and beginning work on specific Jira tickets related to cloud functionality.
+>
+>Details:
+>
+>1. Onboarding and Technical Setup:
+>   - Completed the Newhire Checklist (18 items).
+>   - Overcame challenges with tech setup including SOFTWARE builds, VPN, email, and local environment configurations.
+>   - Successfully resolved multiple technical issues, documented in Jira (JIRA-TICKET-NUMBER).
+>
+>2. Learning and Development:
+>   - Engaged in reading and understanding of the Cloud Team Handbook and related technical documentation.
+>   - Began learning about THE Language and specific tools like THE Workbench/Eclipse.
+>   - Attended meetings with senior team members for guidance and next steps, ensuring smooth integration into the team.
+>
+>3. Project Involvement:
+>   - Started analysis on initial task set related to Cloud functionality (CLOUD-24255).
+>   - Investigated and resolved database issues encountered during local setup.
+>   - Engaged in detailed study of COLLEAGUE A's technical slides and API endpoints related to PROJECT X and PROJECT Y.
+>
+>List of Bugs/Tickets Completed:
+>- JIRA-TICKET-NUMBER: Local setup and technical issues.
+>- JIRA-TICKET-NUMBER: Initial analysis on PROJECT X. (Still in progress.)
+>
+>PTO:
+>- Not applicable to consultant role.
+>
+>Data Sources:
+>- Jira tickets (JIRA-TICKET-NUMBER, JIRA-TICKET-NUMBER)
+>- Stash and TechDocs
+>- Personal logs and meeting notes
+>
+>Total Hours Worked:
+>- Week 1 (Jan 8 - 12): 32 hours
+>- Week 2 (Jan 15 - 19): 30.5 hours
+>- Week 3 (Jan 22 - 24): 23 hours
+>- Week 4 (Jan 29 - 31): 24 hours
+>
+>Total 109.5
 
-This is the manual progress report example, compare the LLM-example below! (Spoiler: The LLM one is just as good as my bored and haphazard effort at a slightly boring task, probably better.)
+This is a manual, redacted progress report example, compare the LLM-example below! (Spoiler: The LLM one is just as good as my bored and haphazard effort at a slightly boring task, probably better.)
 
 ### Tools
 
