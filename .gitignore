@@ -3,6 +3,10 @@
 
 # Ignore text files with a pattern like YYYYMMDD.txt (the daily reports)
 ????????.txt
+# or just any txt file 
+.txt
 
 # Ignore directories named with two digits (archived daily reports)
 [0-1][0-9]/
+# or just any directory
+*/

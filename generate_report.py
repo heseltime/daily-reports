@@ -2,6 +2,8 @@ import argparse
 from datetime import datetime
 from glob import glob
 import os
+
+# External packages
 import openai
 from dotenv import load_dotenv
 
