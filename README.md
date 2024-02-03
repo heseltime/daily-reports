@@ -68,9 +68,17 @@ If you know have a setup that looks like this in terms of directory structure, i
 |-- 01/, 02/, ... archived daily reports
 ```
 
-... you are good to call the python script, optionally providing these arguments:
+... you are good to call the python script, in one of these ways, and after activating the virtual environment:
 
-> TODO
+* `./.venv/Scripts/activate`(Windows)
+
+Then, in my case, for January and a normal [temperature](https://learnprompting.org/docs/basics/configuration_hyperparameters):
+
+* `python ./generate_report.py --employee_name "Jack Heseltine" --month 1 --temperature 0.7`
+
+Or just:
+
+* `python ./generate_report.py` ... which uses the same temperature preset and takes the month according to the daily reports provided (for January, these would be 20240101.txt, 20240102.txt, and so on), pulling the default name from the .env-file instead, along with the api key.
 
 ## Progress Report Prompt :postbox:
 
