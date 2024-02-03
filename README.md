@@ -1,10 +1,10 @@
 # Welcome to (Progress | X) Reports with the OpenAI API!
 
-Where X is any type of report you need to make, progress reports being just my particular use case right now!
+Where X is any type of report you need to make, progress reports being just my particular use case right now! See examples below, validating this LLM use case. One repetitive writing task offshored to LLM land, the perfect use case for this tech at this moment :rabbit2:
 
 ## The Idea
 
-Go to the setup :wrench: section to give it a try with your own reporting-like task, on your own machine/with your own OpenAI API Key, once you have the idea :bulb:
+Go to the setup :wrench: section to give it a try with your own reporting-like task, on your own machine/with your own OpenAI API Key, once you have the idea :bulb: - outlined in terms of the following use case.
 
 ### Use case
 
@@ -28,6 +28,10 @@ This is the manual progress report example, compare the LLM-example below! (Spoi
 
 Let's use the OpenAI python package to call the chat [completion API](https://platform.openai.com/docs/api-reference/chat). OpenAI also has a [quickstart tutorial](https://platform.openai.com/docs/quickstart?context=python) about this topic to get you up to speed, with a quick virtual environment/python installation primer included.
 
+### LLM Point of View/Prompt Engineering
+
+I chose diligent HR worker-type here but this could be anything you feel like you want. I added the important technical detail of not being judgy or providing "all-in-all" type sentences ("All in all, Jack tries really hard") because that is not appropriate for my use case, i.e. the judging is done by someone else.
+
 ## Here's the Setup :wrench:
 
 ### Just clone this repo, get an OpenAI API Key and set up a virtual environment for the two external packages used
@@ -47,7 +51,7 @@ External python packages used: openai, python-dotenv. (Just install them into yo
 
 > TODO
 
-## Progress Report Prompt 
+## Progress Report Prompt :postbox:
 
 I use this prompt for my needs, just adapt the system content in the code as needed.
 
