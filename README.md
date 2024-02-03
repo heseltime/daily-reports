@@ -1,4 +1,4 @@
-# Welcome to :paperclip: (Progress | X) Reports :paperclip: with the OpenAI API!
+# :paperclip: (Progress | X) Reports :paperclip: with the OpenAI API :postbox:
 
 Where X is any type of report you need to make, progress reports being just my particular use case right now! See examples below, validating this LLM use case. One repetitive writing task offshored to LLM land, the perfect use case for this tech at this moment :rabbit2:
 
@@ -34,11 +34,32 @@ I chose diligent HR worker-type here but this could be anything you feel like yo
 
 ## Here's the Setup :wrench:
 
-### Just clone this repo, get an OpenAI API Key and set up a virtual environment for the two external packages used
+### Just clone this repo, get an OpenAI API Key and set up a virtual environment to follow these steps
 
-You'll need an OPENAI_API_KEY to reproduce, it's a good idea to offshore that into an .env file, as per the quickstart tutorial.
+See the [quickstart tutorial](https://platform.openai.com/docs/quickstart?context=python) about the initial steps, then do the following.
 
-External python packages used: openai, python-dotenv. (Just install them into your virutal environment if you are using one.)
+#### 1: .env-file
+
+You'll need an OPENAI_API_KEY to reproduce, and since it's a good idea to offshore that into an .env file, as per the quickstart tutorial, this implementation makes use of a .env file at the same level as generate_report.py. It should look something like:
+
+```
+OPENAI_API_KEY=sc-rt-key123
+DEFAULT_FIRST_NAME=Jack
+DEFAULT_LAST_NAME=Heseltine
+```
+
+#### 2: Virtual Environment and packages
+
+External python packages used: 
+
+* openai
+* python-dotenv
+
+Just install them into your virutal environment if you are using one, otherwise install them to your machine globally.
+
+#### 3: Command Line Calling Works Like ...
+
+If you know have a setup that looks like this in terms of directory structure, including some test daily reports ...
 
 ```
 |-- .env file with OPENAI_API_KEY
@@ -47,7 +68,7 @@ External python packages used: openai, python-dotenv. (Just install them into yo
 |-- 01/, 02/, ... archived daily reports
 ```
 
-### Command Line Calling Works Like ...
+... you are good to call the python script, optionally providing these arguments:
 
 > TODO
 

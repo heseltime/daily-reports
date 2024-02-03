@@ -71,8 +71,8 @@ def main():
     parser.add_argument('--month', type=int, default=datetime.now().month, help='Month for which to generate the report (integer 1-12).')
     parser.add_argument('--temperature', type=float, default=0.5, help='Model temperature for OpenAI completion.')
     # Add first_name and last_name arguments with default values
-    parser.add_argument('--first_name', type=str, default='Jack', help='First name of the employee.')
-    parser.add_argument('--last_name', type=str, default='Heseltine', help='Last name of the employee.')
+    parser.add_argument('--first_name', type=str, default=os.getenv('DEFAULT_FIRST_NAME'), help='First name of the employee.')
+    parser.add_argument('--last_name', type=str, default=os.getenv('DEFAULT_LAST_NAME'), help='Last name of the employee.')
     args = parser.parse_args()
 
     year = datetime.now().year
