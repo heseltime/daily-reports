@@ -1,0 +1,8 @@
+# Environment variables
+.env
+
+# Ignore text files with a pattern like YYYYMMDD.txt (the daily reports)
+????????.txt
+
+# Ignore directories named with two digits (archived daily reports)
+[0-1][0-9]/
