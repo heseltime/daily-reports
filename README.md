@@ -83,7 +83,7 @@ The output per month should be:
 >
 >Total 109.5
 
-This is a manual, redacted progress report example, compare the LLM-example below! (Spoiler: The LLM one is just as good as my bored and haphazard effort at a slightly boring task, probably better.)
+This is a manual, redacted progress report example, compare the LLM-example below! (Spoiler: The LLM one is just as good as my bored and haphazard effort at a slightly boring task, probably better.) It and other examples could be added to the prompt in few-shot learning manner, especially including pertinent details and ways to formulate and focus on certain aspects (see future steps below).
 
 ### Tools
 
@@ -123,10 +123,12 @@ Just install them into your virutal environment if you are using one, otherwise 
 If you know have a setup that looks like this in terms of directory structure, including some test daily reports ...
 
 ```
+| daily-reports: script code and actual text files with daily reports (**manual** part)
 |-- .env file with OPENAI_API_KEY
 |-- generate_report.py
 |-- 20240101.txt, 20240102.txt, ... daily reports are **manual**
 |-- 01/, 02/, ... archived daily reports
+| progress-reports: the **generated** output gets moved to a directory on the level of daily reports, for easy handling
 ```
 
 ... you are good to call the python script, in one of these ways, and after activating the virtual environment:
@@ -182,8 +184,51 @@ Finally, sum together the hours worked per week and give an overall number of ho
 
 ## Generated Progress Report Example
 
-> TODO
+Here's a short one for the two days of februrary so far, based on the daily report example provided above and another similar one.
 
-## Workflow and Similar Use Cases, Generalizations, Extensions ...
+This is a generated report example:
 
-> TODO
+> Subject: Progress Report for Jack Heseltine February
+>
+>Executive Summary:
+>Jack Heseltine has made progress in the software department during the month of February. He has focused on analyzing PROJECT A and has developed a fix for ticket JIRA-TICKET-NUMBER. Jack has also participated in meetings with COLLEAGE A and COLLEAGUE B to discuss the progress and review the relevant workflows in Jira and Git.
+>
+>Details:
+>
+>Group by Product or Major Area:
+>- Jack has spent time analyzing PROJECT A and has made progress in understanding the troubleshooting process from the client side to the DAO/entity layers and the table itself.
+>
+>List of Bugs/Tickets Completed:
+>- Jack has developed a fix for ticket JIRA-TICKET-NUMBER and has updated the ticket to a bug according to the Jira handbook.
+>
+>PTO:
+>- Mot applicable to consultants.
+>
+>Total Hours Worked per Week:
+>- Week 1 (February 1st - Feburary 2nd): 16 hours
+>
+>Total: 16 hours
+
+With more content for the month (not just two days), the quality of the writing content surely gets better as well.
+
+Nice also, per call, you get current OpenAI API usage info, like:
+
+> Completion usage information:
+>   CompletionUsage(completion_tokens=232, prompt_tokens=764, total_tokens=996)
+> Report generated and saved to ..\progress-reports\...
+
+**The generated reports get put in their own directory on the level of the daily-reports folder, which makes sense for my workflow and directory structure. If the directory doesn't exist, it is created.**
+
+## Workflow, Similar Use Cases, Future Work
+
+### Workflow
+
+At the end of the month I start the virtual environment and run the script with my .env presets: I might run it once or twice since results vary from call to call (non-deterministic LLMs). Usually I will go in and add a detail or remove phrase I don't like, but that is very optional. _I.e. the thing could even run on a timer on do its own thing, conceivably even putting together the email and sending it off on the last of the month or something, for fully autonomous auto-mode._
+
+### Other Use Cases?
+
+You tell me! Fork and tell me your idea for regular summarization type tasks you can use for your productive work.
+
+### Future Steps
+
+Typical prompt engineering, especially few-shot learning examples for good progress reports, manual or generated.
