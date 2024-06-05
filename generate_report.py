@@ -15,12 +15,19 @@ def generate_report(year, month, temperature):
     api_key = os.getenv('OPENAI_API_KEY')
     client = openai.OpenAI(api_key=api_key)
 
-    file_pattern = f"{year}{month:02d}??*.txt"
+    # Get the working directory from the environment variable
+    working_directory = os.getenv('WORKING_DIRECTORY')
+
+    # Construct the file pattern with the directory path
+    file_pattern = os.path.join(working_directory, "daily-reports", f"{year}{month:02d}??*.txt")
+
+    # Find all files that match the pattern
     files = glob(file_pattern)
 
     # Concatenate the content of the reports
     reports_content = "\n\n".join(open(file, "r").read() for file in files)
 
+    # Make the OpenAI call
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         temperature=temperature,
@@ -68,21 +75,22 @@ def generate_report(year, month, temperature):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate a progress report from daily reports.')
-    parser.add_argument('--month', type=int, default=datetime.now().month, help='Month for which to generate the report (integer 1-12).')
+    parser.add_argument('--month', type=int, default=datetime.now().month, help='Month for which to generate the report (integer 1-12): uses the current month as default')
+    parser.add_argument('--year', type=int, default=datetime.now().year, help='Year for which to generate the report: uses the current year as default')
     parser.add_argument('--temperature', type=float, default=0.5, help='Model temperature for OpenAI completion.')
     # Add first_name and last_name arguments with default values
     parser.add_argument('--first_name', type=str, default=os.getenv('DEFAULT_FIRST_NAME'), help='First name of the employee.')
     parser.add_argument('--last_name', type=str, default=os.getenv('DEFAULT_LAST_NAME'), help='Last name of the employee.')
     args = parser.parse_args()
 
-    year = datetime.now().year
+    year = args.year
     month_name = datetime(year, args.month, 1).strftime("%B")
 
     report_content = generate_report(year, args.month, args.temperature)
 
     # Use args.first_name and args.last_name in the file name
     file_name = f"{args.first_name}_{args.last_name}_Progress_Report_{month_name}_{year}.txt"
-    directory_path = os.path.join("..", "progress-reports")
+    directory_path = os.path.join(os.getenv('WORKING_DIRECTORY'), "progress-reports")
     os.makedirs(directory_path, exist_ok=True)
     file_path = os.path.join(directory_path, file_name)
 
